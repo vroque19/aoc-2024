@@ -1,4 +1,5 @@
 import icecream as ic
+from collections import Counter
 
 
 def parseInputAsLines():
@@ -15,12 +16,13 @@ def main():
     l2.append(int(two))
   l1 = sorted(l1)
   l2 = sorted(l2)
+  c = Counter(l2)
   ans = 0
-  for i in range(len(l1)):
-    ans += abs(l1[i]-l2[i])
   
-  with open("out1.txt", 'w') as f:
-      print(ans, file=f)
+  for i in range(len(l1)):
+    ans += l1[i] * c[l1[i]]
+  
+  print(ans)
 
 
 if __name__ == "__main__":
