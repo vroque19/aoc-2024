@@ -1,6 +1,6 @@
 import re
 
-
+# modify the input using regex and deleting the last don't()...
 def main():
   with open("inp.txt", 'r') as file:
     input = file.readlines()
